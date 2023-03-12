@@ -1,3 +1,17 @@
+/* Variable declarations */
+:root {
+    --background-color: #88b0a4;
+    --white: #ffffff;
+    --font-color: #000000;
+    --border-color: #6f6f6f;
+    --accordion-color: #9ecabc; 
+    --desktop-width: 1920px;
+    --desktop-height: 1080px;
+    --tablet-width: 820px;
+    --tablet-height: 1180px;
+    --mobile-width: 320px;
+    --mobile-height: 568px;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -8,34 +22,31 @@ html{
     font-size: 10px;
 }
 body{
-    background-color: #88b0a4;
+    background-color: var(--background-color);
 }
 .container {
     margin: 1rem auto;
-    max-width: 1920px;
+    max-width: var(--desktop-width);
+    max-height: var(--desktop-height);
     padding: 0 5rem;
     overflow: hidden;
-    width: 60%;
+    width: 47%;
   }
- 
 h1{
     margin: 0 auto;
-    color: #000;
-    letter-spacing: 0.1em;
-    
+    color: var(--font-color);
+    letter-spacing: 0.1em;    
 }
 .accordion{
     margin: 1rem auto;
-
 }
 .accordion-item{
     list-style: none;
-    width: 100%;
     margin-bottom: 1rem;
-    background: #9ecabc;
+    background: var(--accordion-color);
     padding: 1rem;
-    border-top: #6f6f6f 1px solid;
-    border-bottom:#6f6f6f 1px solid;
+    border-top: var(--border-color) 1px solid;
+    border-bottom: var(--border-color) 1px solid;
     border-radius: 0.2rem;
 }
 .accordion-item-header{
@@ -45,13 +56,12 @@ h1{
     font-size: 1.8rem;
     font-weight: 500;
     padding: 1rem;
-    color: #000;
+    color: var(--font-color);
     cursor: pointer;
 }
 .accordion-item-header span{
     font-size: 2.2rem;
 }
-
 .accordion-item-header + input[type="radio"]{
     display: none;
 }
@@ -65,6 +75,9 @@ h1{
 }
 .content img{
     max-width: 50%;
+}
+@media screen and (max-width: 768px) {
+
 }
 .accordion-item-header + input[type="radio"]:checked + .content{
     max-height: 100%;
