@@ -1,0 +1,114 @@
+/* Variable declarations */
+:root {
+    --background-color: #88b0a4;
+    --white: #ffffff;
+    --font-color: #000000;
+    --border-color: #6f6f6f;
+    --accordion-color: #9ecabc; 
+    --device-width: 1920px;
+    --device-height: 1080px;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    background-color: var(--background-color);
+}
+.container {
+    margin: 4rem auto;
+    max-width: var(--desktop-width);
+    max-height: var(--desktop-height);
+    padding: 0 5rem;
+    overflow: hidden;
+    width: 47%;
+  }
+h1{
+    margin: 0 auto;
+    color: var(--font-color);
+    letter-spacing: 0.1em;    
+}
+.accordion{
+    margin: 1rem auto;
+}
+.accordion-item{
+    list-style: none;
+    margin-bottom: 1rem;
+    background: var(--accordion-color);
+    padding: 1rem;
+    border-top: var(--border-color) 1px solid;
+    border-bottom: var(--border-color) 1px solid;
+    border-radius: 0.2rem;
+}
+.accordion-item-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 1rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+.accordion-item-header span{
+    font-size: 2.2rem;
+}
+.accordion-item-header + input[type="radio"]{
+    display: none;
+}
+.content{
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 2.6rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-heigth 0.5s;
+}
+.content img{
+    max-width: 50%;
+}
+@media screen and (max-width: 820px) {
+    .container{
+        width: 70%;
+    }
+    .content img {
+        max-width: 70%;
+    }
+    :root {
+        --device-width: 320px;
+        --device-height: 568px;
+      }
+
+}
+@media screen and (max-width: 320px) {
+    .container{
+        width: 100%;
+    }
+    .content img {
+        max-width: 100%;
+    }
+    :root {
+        --device-width: 320px;
+        --device-height: 568px;
+      }
+
+}
+@media screen and (max-width: 320px) {
+    .container{
+        width: 100%;
+    }
+    :root {
+        --device-width: 320px;
+        --device-height: 568px;
+      }
+
+}
+.accordion-item-header + input[type="radio"]:checked + .content{
+    max-height: 100%;
+    color: #000;
+}
